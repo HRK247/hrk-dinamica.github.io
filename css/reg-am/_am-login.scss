@@ -1,0 +1,727 @@
+/* SCSS Document */
+
+/* IBKR-COMMON.CSS OVERRIDES ---------------------------------------------------------------------------------------------------- */
+body.bg-gray {
+	background-image:url(https://assets.devbam.com/contenido_compartido/stroke-orange-up1366x584.svg);
+}
+input:focus, select:focus, textarea:focus, button:focus {
+	outline-style:none;
+	box-shadow:none;
+	border-color:transparent;
+}
+
+/* COOKIE BANNER (GDPR) ---------------------------------------------------------------------------------------------------- */
+.cookie-banner {
+	position:fixed;
+	width:100%;
+	z-index:10;
+}
+
+/* LOGIN CONTAINER ---------------------------------------------------------------------------------------------------- */
+section.login-page {
+	display:flex;
+    justify-content:center;
+    align-content:stretch;
+    align-items:center;
+	width:100%;
+	min-height:calc(100vh - 175px);
+	background-size:cover;
+	overflow-x:hidden;
+    overflow-y:hidden;
+    .container {
+        display:flex;
+        justify-content:center;
+        align-content:center;
+        align-items:center;
+        margin:0px;
+        padding:0px;
+        width:100%;
+        min-height:auto;
+        box-sizing:border-box;
+        .login-container {
+            margin:0px;
+            padding:10px;
+            width:500px;
+            height:auto;
+            background-color:transparent;
+            box-sizing:border-box;
+            .brand-logo {
+                display:block;
+                margin:0px auto 20px auto;
+                width:var(--brand-logo-width);
+                height:var(--brand-logo-height);
+                background:transparent var(--brand-logo-image) var(--brand-logo-repeat) var(--brand-logo-position);
+                background-size:var(--brand-logo-size);
+            }
+            .wb-logo {
+                display:block;
+                margin:0px auto 40px auto;
+                width:75%;
+                height:auto;
+                background:transparent;
+                img {
+                    display:block;
+                    max-width:100%;
+                    height:auto;
+                    max-height:100%;
+                }
+            }
+            .login {
+                margin:0px;
+                padding:20px 40px;
+                background-color:var(--bg-body);
+                border:1px solid var(--border-color);
+                border-top:5px solid var(--primary);
+                box-shadow:var(--box-shadow);
+                h1 {
+                    margin:10px 0px 0px 0px;
+                    padding:0px;
+                    font-weight:var(--fw-400);
+                    font-size:1.25rem;
+                    line-height:1.625rem;
+                    color:var(--primary);
+                }
+                p {
+                    &.login-switch {
+                        text-align:var(--dir-end);
+                        color:var(--gray);
+                    }
+                    &.link-password {
+                        margin:5px 0px 0px 0px;
+                        text-align:var(--dir-end);
+                        a, a:link, a:visited, a:hover, a:active, a:focus {
+                            font-size:0.75rem;
+                            color:var(--font-color-default);
+                        }
+                        a:hover {
+                            color:var(--font-color-dark);
+                        }
+                    }
+                    span.switchery {
+                        margin:0px 5px;
+                    }
+                    span.active {
+                        color:var(--primary);
+                    }
+                }
+                .form-control {
+                    padding:10px 16px 10px 16px;
+                    height:46px;
+                    font-size:1.125rem;
+                    &:hover {
+                        border-color:var(--black);
+                    }
+                    &::placeholder {
+                     color:var(--gray-70);
+                    }
+                }
+                .form-group {
+                    margin:10px 0px 0px 0px;
+                    .icon-addon {
+                        display:block;
+                        position:relative;
+                        color:var(--font-color-default);
+                        &:after, &:before {
+                            display:flex;
+                            content:" ";
+                        }
+                        @include clearfix;
+                        .fa {
+                            position:absolute;
+                            top:4px;
+                            #{$dir-start}:11px;
+                            z-index:2;
+                            margin-#{$dir-start}:0;
+                            padding:10px 0px;
+                            width:20px;
+                            font-size:1.125rem;
+                            text-align:center;
+                            color:var(--font-color-light);
+                        }
+                        &:hover {
+                            .fa {
+                                color:var(--font-color-dark);
+                            }
+                        }
+                        .form-control {
+                            float:var(--dir-start);
+                            padding:10px 16px 10px 16px;
+                            padding-#{$dir-start}:40px;
+                            height:46px;
+                            font-weight:normal;
+                            font-size:1.125rem;
+                            line-height:1.375rem;
+                            &:focus + .fa {
+                                color:var(--font-color-dark);
+                            }
+                        }
+                    }
+                }
+                .btn-primary {
+                    margin:0px auto;
+                    width:100%;
+                    text-transform:none;
+                    background-color:#fdda24;
+                    border-color:#fdda24;
+                    &::after {
+                        position:absolute;
+                        #{$dir-end}:70px;
+                        @include font-awesome-5-solid;
+                        content:var(--fa-arrow-start);
+                        opacity:0;
+                        @include hover-transition;
+                    }
+                    &:hover::after {
+                        opacity:1;
+                        transform:translate(5px, 0px);
+                    }
+                    &.disabled.focus, &.disabled:focus, &.disabled:hover, &[disabled].focus, &[disabled]:focus, &[disabled]:hover, fieldset[disabled] &.focus, fieldset[disabled] &:focus, fieldset[disabled] &:hover {
+                        background-color:var(--primary);
+                        border-color:var(--primary);
+                    }
+                }
+                .alert {
+                    p {
+                        font-size:0.75rem;
+                        line-height:1.0rem;
+                        text-align:center;
+                    }
+                }
+                .gsss {
+                    #app {
+                        display:flex;
+                        margin:0px auto;
+                        min-width:250px;
+                        max-width:600px;
+                        background-color:#FCF8E2;
+                        .content {
+                            display:flex;
+                            flex-grow:0;
+                            height:100%;
+                            .icon-attention {
+                                display:flex;
+                                align-items:center;
+                                padding:10px;
+                            }
+                            .bulletin {
+                                display:flex;
+                                flex-direction:column;
+                                padding:10px;
+                                #bulletin {
+                                    flex-grow:9;
+                                    display:-webkit-inline-box;
+                                    -webkit-box-align:center;
+                                    p {
+                                        margin:10px 0px 10px 0px;
+                                        font-size:0.75rem;
+                                        line-height:1.0rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .simulated-banner {
+            display:none;
+            margin:-25px -40px 20px -40px;
+            padding:2px 0px 2px 0px;
+            width:480px;
+            background-color:var(--red);
+            p {
+                margin:0px;
+                padding:0px;
+                font-weight:var(--fw-600);
+                text-align:center;
+                color:var(--white);
+                text-transform:uppercase;
+            }
+        }
+    }
+    p {
+        margin:10px 0px 10px 0px;
+    }
+}
+body.bg-gray section.login-page .container .login-container .brand-logo {
+	background-image:url(https://assets.devbam.com/contenido_compartido/stroke-orange-up1366x584.svg);
+}
+
+/* DOWNLOAD TEXT CONTAINER ---------------------------------------------------------------------------------------------------- */
+section.download-text {
+	margin:0px;
+	padding:10px 0px 5px 0px;
+	width:100%;
+	height:50px;
+	box-sizing:border-box;
+    p {
+        font-weight:var(--fw-300);
+        text-align:center;
+    }
+}
+
+/* FOOTER ---------------------------------------------------------------------------------------------------- */
+footer {
+	margin:0px;
+	padding:0px;
+	width:100%;
+	height:auto;
+	background-color:var(--bg-body);
+    border-top:1px solid var(--border-color);
+	box-sizing:border-box;
+    .footer-content {
+        width:100%;
+        box-sizing:border-box;
+        .footer-downloads {
+            padding:20px 0px;
+            border-bottom:1px solid var(--border-color);
+            .row {
+                &>div {
+                    display:flex;
+                    align-content:stretch;
+                    align-items:stretch;
+                    .software-download {
+                        display:flex;
+                        justify-content:flex-start;
+                        align-content:stretch;
+                        align-items:center;
+                        float:var(--dir-start);
+                        padding:0px 20px;
+                        border-#{$dir-end}:1px solid var(--border-color);
+                        @include clearfix;
+                        &:last-child {
+                            border-#{$dir-end}:none;
+                        }
+                        .footer-text {
+                            p {
+                                margin:0px;
+                                font-weight:var(--fw-600);
+                                font-size:1.0rem;
+                                line-height:1.0rem;
+                                text-align:var(--dir-start);
+                                color:var(--font-color-default);
+                                span {
+                                    font-weight:var(--fw-300);
+                                    font-size:0.625rem;
+                                    color:var(--font-color-light);
+                                }
+                            }
+                        }
+                        .footer-img {
+                            text-align:var(--dir-end);
+                            a {
+                                display:inline-block;
+                                img {
+                                    max-height:40px;
+                                }
+                                &+a {
+                                    margin-#{$dir-start}:5px;
+                                }
+                            }
+                        }
+                        &.software-ibkr {
+                            width:40%;
+                            .footer-text {
+                                width:calc(100% - 265px);
+                            }
+                            .footer-img {
+                                width:265px;
+                            }
+                        }
+                        &.software-desktop-tws {
+                            width:30%;
+                            .footer-text {
+                                width:calc(100% - 160px);
+                            }
+                            .footer-img {
+                                width:160px;
+                            }
+                        }
+                        &.software-ib-api {
+                            width:30%;
+                            .footer-text {
+                                width:calc(100% - 160px);
+                            }
+                            .footer-img {
+                                width:160px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .footer-links {
+            padding:10px 0px;
+            p {
+                margin:0px;
+                font-weight:var(--fw-300);
+                text-align:center;
+            }
+            a, a:link, a:visited, a:hover, a:active, a:focus {
+                font-size:0.6875rem;
+                color:var(--font-color-dark);
+            }
+            a:hover {
+                color:var(--font-color-dark);
+            }
+            span.pipe {
+                display:inline-block;
+                margin-#{$dir-start}:10px;
+                margin-#{$dir-end}:18px;
+                width:1px;
+                height:10px;
+                background-color:var(--gray-70);
+            }
+        }
+    }
+}
+
+/* PAPER TRADING COLOR SWITCH ---------------------------------------------------------------------------------------------------- */
+body.bg-red {
+	background:var(--red-dark-40) !important;
+	background:-moz-linear-gradient(top, var(--red-dark-30) 0%, var(--red-dark-40) 100%) !important;
+	background:-webkit-linear-gradient(top, var(--red-dark-30) 0%, var(--red-dark-40) 100%) !important;
+	background:linear-gradient(to bottom, var(--red-dark-30) 0%, var(--red-dark-40) 100%) !important;
+ 	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='var(--red-dark-30)', endColorstr='var(--red-dark-40)', GradientType=0 ) !important;
+    section.login-page {
+        .container {
+            .simulated-banner {
+                display:block;
+            }
+            .login-container {
+                .brand-logo {
+                    background-image:var(--brand-logo-image-inverse);
+                }
+                .login {
+                    border-top-color:var(--red);
+                    h1 {
+                        color:var(--red);
+                    }
+                    p {
+                        span.active {
+                            color:var(--red);
+                        }
+                    }
+                    a, a:link, a:visited, a:hover, a:active, a:focus {
+                        &.inline {
+                            color:var(--red);
+                        }
+                        &.btn.btn-primary {
+                            background-color:var(--red);
+                            border-color:var(--red);
+                        }
+                    }
+                    a:hover {
+                        &.inline {
+                            color:var(--red-dark-20);
+                        }
+                        &.btn.btn-primary {
+                            background-color:var(--red-dark-20);
+                            border-color:var(--red-dark-20);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .login {
+        .btn-primary {
+            background-color:var(--red);
+            border-color:var(--red);
+        }
+        h1 {
+            color:var(--red);
+        }
+        p span.active {
+            color:var(--red);
+        }
+    }
+    section.download-text p {
+        color:var(--white);
+        opacity:0.75;
+    }
+}
+
+
+
+/* BOOTSTRAP 4 | MEDIA QUERY | EXTRA SMALL (< 576PX) ---------------------------------------------------------------------------------------------------- */
+@media (max-width:575.98px) {
+
+    /* LOGIN CONTAINER ---------------------------------------------------------------------------------------------------- */
+    section.login-page {
+        min-height:calc(100vh - 50px);
+        .container {
+            vertical-align:top;
+            padding:0px;
+            .login-container {
+                padding:20px 10px 10px 10px;
+                width:100%;
+                .login {
+                    padding:20px;
+                }
+            }
+            .simulated-banner {
+                margin:-25px -20px 20px -20px;
+                width:initial;
+            }
+        }
+    }
+
+    /* FOOTER ---------------------------------------------------------------------------------------------------- */
+    footer {
+        .footer-content {
+            .footer-downloads {
+                padding:0px;
+                .row {
+                    &>div {
+                        display:block;
+                        .software-download {
+                            float:none;
+                            width:100%;
+                            padding:20px 0px;
+                            border-#{$dir-end}:none;
+                            border-bottom:1px solid var(--border-color);
+                            @include clearfix;
+                            &:last-child {
+                                border-bottom:none;
+                            }
+                            .footer-text {
+                                p {
+                                    text-align:var(--dir-start);
+                                }
+                            }
+                            .footer-img {
+                                text-align:var(--dir-end);
+                            }
+                            &.software-ibkr {
+                                width:100%;
+                                .footer-text {
+                                    width:100%;
+                                }
+                                .footer-img {
+                                    width:100%;
+                                }
+                            }
+                            &.software-desktop-tws {
+                                width:100%;
+                                .footer-text {
+                                    width:100%;
+                                }
+                                .footer-img {
+                                    width:100%;
+                                }
+                            }
+                            &.software-ib-api {
+                                width:100%;
+                                .footer-text {
+                                    width:100%;
+                                }
+                                .footer-img {
+                                    width:100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+
+/* BOOTSTRAP 4 | MEDIA QUERY | SMALL (576PX-767.98PX) ---------------------------------------------------------------------------------------------------- */
+@media (min-width:576px) and (max-width:767.98px) {
+
+    /* LOGIN CONTAINER ---------------------------------------------------------------------------------------------------- */
+    section.login-page {
+        min-height:calc(100vh - 50px);
+    }
+
+    /* FOOTER ---------------------------------------------------------------------------------------------------- */
+    footer {
+        .footer-content {
+            .footer-downloads {
+                .row {
+                    &>div {
+                        .software-download {
+                            flex-direction:column;
+                            .footer-text {
+                                p {
+                                    text-align:center;
+                                }
+                            }
+                            .footer-img {
+                                margin-top:10px;
+                                text-align:center;
+                            }
+                            &.software-ibkr {
+                                width:40%;
+                                .footer-text {
+                                    width:100%;
+                                }
+                                .footer-img {
+                                    width:100%;
+                                }
+                            }
+                            &.software-desktop-tws {
+                                width:30%;
+                                .footer-text {
+                                    width:100%;
+                                }
+                                .footer-img {
+                                    width:100%;
+                                }
+                            }
+                            &.software-ib-api {
+                                width:30%;
+                                .footer-text {
+                                    width:100%;
+                                }
+                                .footer-img {
+                                    width:100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+
+/* BOOTSTRAP 4 | MEDIA QUERY | MEDIUM (768PX-991.98PX) ---------------------------------------------------------------------------------------------------- */
+@media (min-width:768px) and (max-width:991.98px) {
+
+    /* LOGIN CONTAINER ---------------------------------------------------------------------------------------------------- */
+    section.login-page {
+        min-height:calc(100vh - 220px);
+    }
+
+    /* FOOTER ---------------------------------------------------------------------------------------------------- */
+    footer {
+        .footer-content {
+            .footer-downloads {
+                .row {
+                    &>div {
+                        .software-download {
+                            flex-direction:column;
+                            .footer-text {
+                                p {
+                                    text-align:center;
+                                }
+                            }
+                            .footer-img {
+                                margin-top:10px;
+                                text-align:center;
+                            }
+                            &.software-ibkr {
+                                width:40%;
+                                .footer-text {
+                                    width:100%;
+                                }
+                                .footer-img {
+                                    width:100%;
+                                }
+                            }
+                            &.software-desktop-tws {
+                                width:30%;
+                                .footer-text {
+                                    width:100%;
+                                }
+                                .footer-img {
+                                    width:100%;
+                                }
+                            }
+                            &.software-ib-api {
+                                width:30%;
+                                .footer-text {
+                                    width:100%;
+                                }
+                                .footer-img {
+                                    width:100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+
+/* BOOTSTRAP 4 | MEDIA QUERY | LARGE (992PX-1199.98PX) ---------------------------------------------------------------------------------------------------- */
+@media (min-width:992px) and (max-width:1199.98px) {
+
+    /* LOGIN CONTAINER ---------------------------------------------------------------------------------------------------- */
+    section.login-page {
+        min-height:calc(100vh - 220px);
+    }
+
+    /* FOOTER ---------------------------------------------------------------------------------------------------- */
+    footer {
+        .footer-content {
+            .footer-downloads {
+                .row {
+                    &>div {
+                        .software-download {
+                            flex-direction:column;
+                            .footer-text {
+                                p {
+                                    text-align:center;
+                                }
+                            }
+                            .footer-img {
+                                margin-top:10px;
+                                text-align:center;
+                            }
+                            &.software-ibkr {
+                                width:40%;
+                                .footer-text {
+                                    width:100%;
+                                }
+                                .footer-img {
+                                    width:100%;
+                                }
+                            }
+                            &.software-desktop-tws {
+                                width:30%;
+                                .footer-text {
+                                    width:100%;
+                                }
+                                .footer-img {
+                                    width:100%;
+                                }
+                            }
+                            &.software-ib-api {
+                                width:30%;
+                                .footer-text {
+                                    width:100%;
+                                }
+                                .footer-img {
+                                    width:100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+
+/* BOOTSTRAP 4 | MEDIA QUERY | EXTRA LARGE (>1200PX) ----------------------------------------------------------------------------------------------------
+@media (min-width:1200px) {
+    
+}
+*/
